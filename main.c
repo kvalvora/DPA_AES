@@ -28,9 +28,11 @@ int main(void)
 		for (i=0; i<16; i++) {*(plaintext+i) = getrn();} //generating a random plaintext
 		//printf("%d:",j++);
 		Display(plaintext);
-		GPIOB->BSRR = (1<<8);	//trigger
-        AES_encrypt(plaintext,ciphertext,&expanded);
-        GPIOB->BRR = (1<<8);	//trigger
+		GPIOB->BSRR = (1<<8);	//trigger set
+		delayCycles(10);
+		GPIOB->BRR = (1<<8);
+		AES_encrypt(plaintext,ciphertext,&expanded);
+        //GPIOB->BRR = (1<<8);	//trigger reset
         //Displayciphertext) ;       
         //printf("Key:");
 		//Display(key);
