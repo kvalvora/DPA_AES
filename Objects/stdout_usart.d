@@ -6,4 +6,4 @@
 .\objects\stdout_usart.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\cmsis_compiler.h
 .\objects\stdout_usart.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\cmsis_armcc.h
 .\objects\stdout_usart.o: C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.6.0\Device\Include\system_stm32l0xx.h
-.\objects\stdout_usart.o: C:\Users\Kewal Vora\Documents\stm_workspace\AES_\RTE\_Target_1\RTE_Components.h
+.\objects\stdout_usart.o: C:\Users\Kewal Vora\Documents\stm_workspace\AES\RTE\_Target_1\RTE_Components.h

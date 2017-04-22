@@ -14,7 +14,6 @@
     #define USARTx  USART2
 		
 	#define RTE_Compiler_IO_STDOUT_User 1
-    //#define BUF_SIZE 31  //31 // for AES-128 use 32  		
 		
     int mystdout_init (void);
     void SystemClock_Config(void);

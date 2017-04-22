@@ -33,7 +33,7 @@ int main(void)
 		GPIOB->BRR = (1<<8);
 		AES_encrypt(plaintext,ciphertext,&expanded);
         //GPIOB->BRR = (1<<8);	//trigger reset
-        //Displayciphertext) ;       
+        //Display(ciphertext) ;       
         //printf("Key:");
 		//Display(key);
 		
