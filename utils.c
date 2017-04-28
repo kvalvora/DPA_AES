@@ -18,7 +18,7 @@ int mystdout_init (void) {
   GPIOA->MODER  &= ~(( 3ul << 2* 3) | ( 3ul << 2* 2) );
   GPIOA->MODER  |=  (( 2ul << 2* 3) | ( 2ul << 2* 2) );
 
-  USARTx->BRR  = __USART_BRR(16000000ul, 57600ul);  /* 57600 baud @ 4MHz */
+  USARTx->BRR  = __USART_BRR(4000000ul, 57600ul);  /* 57600 baud @ 4MHz */
   USARTx->CR3    = 0x0000;                           /* no flow control */
   USARTx->CR2    = 0x0000;                           /* 1 stop bit */
   USARTx->CR1    = ((   1ul <<  2) |                 /* enable RX */

@@ -1,0 +1,12 @@
+--cpu Cortex-M0+
+".\objects\aes.o"
+".\objects\main.o"
+".\objects\utils.o"
+".\objects\stdout_usart.o"
+".\objects\retarget_io.o"
+".\objects\startup_stm32l053xx.o"
+".\objects\system_stm32l0xx.o"
+--strict --scatter ".\Objects\software_AES.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\software_AES.map" -o .\Objects\software_AES.axf

@@ -41,7 +41,7 @@
         //RCC->CR |= RCC_CR_HSEON | RCC_CR_HSEBYP; 
         RCC->CR |=RCC_CR_HSEON;
 		//Configure PLL to generate a 48MHz signal to clock RNG
-        RCC->CFGR |= RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMUL6 | RCC_CFGR_PLLDIV2;   
+        RCC->CFGR |= RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMUL24 | RCC_CFGR_PLLDIV2;   
         //Enable PLL
         RCC->CR |= RCC_CR_PLLON;
 

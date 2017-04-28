@@ -7,7 +7,7 @@ void delayCycles(uint32_t cycles);
 int main(void)
 { 
     uint8_t i;
-	//uint32_t j = 0;
+	uint32_t j = 0;
 	unsigned char key[16] = {0x2b,0x28,0xab,0x09,0x7e,0xae,0xf7,0xcf,0x15,0xd2,0x15,0x4f,0x16,0xa6,0x88,0x3c}; 
     AES_KEY expanded;
     unsigned char ciphertext[16];
@@ -21,7 +21,7 @@ int main(void)
 	
 	GPIOB->BRR = (1<<8);
 
-	while(1){ 
+	while(j<10){ 
 		//AES-128 software implementation
         private_AES_set_encrypt_key(key, 128, &expanded) ;
 		
@@ -36,6 +36,7 @@ int main(void)
         //Display(ciphertext) ;       
         //printf("Key:");
 		//Display(key);
+		j++;
 		
 	}
 }

@@ -1,0 +1,9 @@
+.\objects\buttons_stm32l053-discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.6.0\Boards\ST\STM32L053-Discovery\Common\Buttons_STM32L053-Discovery.c
+.\objects\buttons_stm32l053-discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.6.0\Device\Include\stm32l0xx.h
+.\objects\buttons_stm32l053-discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.6.0\Device\Include\stm32l053xx.h
+.\objects\buttons_stm32l053-discovery.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\core_cm0plus.h
+.\objects\buttons_stm32l053-discovery.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\buttons_stm32l053-discovery.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\cmsis_compiler.h
+.\objects\buttons_stm32l053-discovery.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\cmsis_armcc.h
+.\objects\buttons_stm32l053-discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.6.0\Device\Include\system_stm32l0xx.h
+.\objects\buttons_stm32l053-discovery.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board\Board_Buttons.h
