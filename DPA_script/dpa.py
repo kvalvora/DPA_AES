@@ -24,7 +24,10 @@ else:
 #declare ctype variables
 hdwf = c_int()
 sts = c_byte()
-rgdSamples = (c_double*2048)()
+
+sample_list = list()
+for l in range(3):
+    sample_list.append( (c_double*2048)() )
 
 #print DWF version
 version = create_string_buffer(16)
@@ -63,27 +66,40 @@ time.sleep(2)
 
 print "   starting repeated acquisitions"
 
+f2=open("power_traces.csv","w")
+
+
 # begin acquisition
 dwf.FDwfAnalogInConfigure(hdwf, c_bool(False), c_bool(True))
 
-for iTrigger in range(1):
+for i in range(3):
     # new acquisition is started automatically after done state 
 
     while True:
         dwf.FDwfAnalogInStatus(hdwf, c_int(1), byref(sts))
         if sts.value == DwfStateDone.value :
+            dwf.FDwfAnalogInStatusData(hdwf, 1, sample_list[i], 2048)
             break
-        time.sleep(0.001)
     
-    dwf.FDwfAnalogInStatusData(hdwf, 1, rgdSamples, 2048)
 
-rgpy=[0.0]*len(rgdSamples)
-for i in range(0,len(rgpy)):
-    rgpy[i]=rgdSamples[i]  
+    
+rgpy=[0.0]*len(sample_list[0])
 
-plt.plot(rgpy)
+power_list = list()
+for l in range(3):
+    print len(sample_list[l])
+    power_list.append([0.0]*len(sample_list[0]))
+
+    for pnt in range(0,len(power_list[l])):
+        power_list[l][pnt]=sample_list[l][pnt]
+        f2.write("%f\n" % sample_list[l][pnt])
+
+
+
+#plt.plot(power_list[0])
+plt.plot(power_list[0],'c',power_list[1],'r',power_list[2],'k')
 plt.show()
-    
+f2.close()    
 dwf.FDwfDeviceCloseAll()
 
 
