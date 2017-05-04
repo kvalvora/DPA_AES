@@ -10,3 +10,4 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: AES.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

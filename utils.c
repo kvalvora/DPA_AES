@@ -1,5 +1,5 @@
 #include "utils.h"
-
+#define BUF_SIZE 32
 
 //----------------------------------------------------------------------------
 // Enable serial communication at 57600 bauds
@@ -61,4 +61,22 @@ uint8_t getrn(){
     return ((uint8_t)(RNG->DR)) ;
 }
 
-
+void rdser( uint8_t * buffer ){
+    uint8_t i = 0 , c = 0 ;
+    
+    //Clear the buffer
+    for( i=0 ; i<BUF_SIZE ; i++)
+        *(buffer+i) = 0 ;
+    
+    i = 0 ;
+    c = stdin_getchar() ; 
+    //Get data from the serial port until it is a CR
+    while ( c != 0x0d ){
+        buffer[i] = c ;
+        c = stdin_getchar() ;                                
+        i++ ;
+        //Prevent buffer overflow
+        if( i == BUF_SIZE )
+            i = 0 ;
+    }    
+}

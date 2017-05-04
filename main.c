@@ -1,13 +1,19 @@
 #include "stm32l0xx.h"
 #include "utils.h"
 #include "AES.h"
+#include "string.h"
 
 void delayCycles(uint32_t cycles);
 
 int main(void)
 { 
     uint8_t i;
-	uint32_t j = 0;
+	//uint32_t j = 0;
+	
+	uint8_t randstr[16] ;
+    uint8_t empty[16] =  "NULLNULLNULLNUL\0";
+
+	
 	unsigned char key[16] = {0x2b,0x28,0xab,0x09,0x7e,0xae,0xf7,0xcf,0x15,0xd2,0x15,0x4f,0x16,0xa6,0x88,0x3c}; 
     AES_KEY expanded;
     unsigned char ciphertext[16];
@@ -20,25 +26,31 @@ int main(void)
 	RCC->CFGR |= RCC_CFGR_MCO_SYSCLK; /* Select system clock to be output on the MCO without prescaler */
 	
 	GPIOB->BRR = (1<<8);
-
-	while(j<10){ 
-		//AES-128 software implementation
-        private_AES_set_encrypt_key(key, 128, &expanded) ;
+	
+	
+	while(1){ 
 		
-		for (i=0; i<16; i++) {*(plaintext+i) = getrn();} //generating a random plaintext
-		//printf("%d:",j++);
-		Display(plaintext);
-		GPIOB->BSRR = (1<<8);	//trigger set
-		delayCycles(10);
-		GPIOB->BRR = (1<<8);
-		AES_encrypt(plaintext,ciphertext,&expanded);
-        //GPIOB->BRR = (1<<8);	//trigger reset
-        //Display(ciphertext) ;       
-        //printf("Key:");
-		//Display(key);
-		j++;
+		memcpy(randstr,empty,16); //init
+		rdser(randstr); //get new string
+		
+		if(memcmp(randstr,empty,16)!=0){
+			//AES-128 software implementation
+			private_AES_set_encrypt_key(key, 128, &expanded) ;
+			for (i=0; i<16; i++) {*(plaintext+i) = getrn();} //generating a random plaintext
+			//printf("%d:",j++);
+			Display(plaintext);
+			GPIOB->BSRR = (1<<8);	//trigger set
+			delayCycles(10);
+			GPIOB->BRR = (1<<8);
+			AES_encrypt(plaintext,ciphertext,&expanded);
+			//GPIOB->BRR = (1<<8);	//trigger reset
+			//Displayciphertext) ;       
+			//printf("Key:");
+			//Display(key);
+		}
 		
 	}
+
 }
 
 void delayCycles(uint32_t cycles)

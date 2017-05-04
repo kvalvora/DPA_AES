@@ -28,14 +28,14 @@ Project File Date:  04/23/2017
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 compiling utils.c...
-compiling main.c...
 compiling AES.c...
+compiling main.c...
 compiling retarget_io.c...
 assembling startup_stm32l053xx.s...
 compiling stdout_USART.c...
 compiling system_stm32l0xx.c...
 linking...
-Program Size: Code=7228 RO-data=8736 RW-data=12 ZI-data=1884  
+Program Size: Code=7472 RO-data=8736 RW-data=12 ZI-data=1884  
 ".\Objects\software_AES.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -48,10 +48,10 @@ Package Vendor: ARM
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.ARM_Compiler.1.2.0.pack
-                Keil.ARM Compiler::Compiler:I/O:STDIN:User:1.1.0
+                Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.1.0
                 Keil ARM Compiler extensions
-   * Component: STDIN Variant: User Version: 1.1.0
    * Component: STDOUT Variant: User Version: 1.1.0
+   * Component: STDIN Variant: User Version: 1.1.0
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.STM32L0xx_DFP.1.6.0.pack
@@ -68,23 +68,23 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.0.0
 
-   * Component: Keil.ARM Compiler::Compiler:I/O:STDIN:User:1.1.0
-      Source file:   Template\stdin_user.c
-      Source file:   Template\stdin_keyboard.c
-      Source file:   Source\retarget_io.c
-      Source file:   Template\stdin_USART.c
-
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.1.0
+      Source file:   Template\stdout_USART.c
       Source file:   Source\retarget_io.c
       Source file:   Template\stdout_user.c
       Source file:   Template\stdout_display.c
-      Source file:   Template\stdout_USART.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDIN:User:1.1.0
+      Source file:   Source\retarget_io.c
+      Source file:   Template\stdin_keyboard.c
+      Source file:   Template\stdin_user.c
+      Source file:   Template\stdin_USART.c
 
    * Component: Keil::Device:Startup:1.6.0
+      Source file:   Device\Source\ARM\STM32L0xx_OPT.s
       Source file:   Device\Source\ARM\startup_stm32l053xx.s
       Source file:   Device\Source\system_stm32l0xx.c
-      Source file:   Device\Source\ARM\STM32L0xx_OPT.s
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>

@@ -22,6 +22,7 @@
 	void pulse (void);
 	void ConfigureRNG(void);
 	uint8_t getrn(void);
+	void rdser( uint8_t * buffer );
     
     __INLINE void SystemClock_Config(void)
     {
