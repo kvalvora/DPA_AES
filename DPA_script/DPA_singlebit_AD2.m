@@ -39,20 +39,6 @@ traceFile = sprintf('C:\\Users\\afernandezrubio\\Desktop\\abraham\\python\\DPA\\
 trc_matrix = csvread(traceFile);
 trc_matrix = trc_matrix' ; 
 
-%%
-
-% Compute the mean and variance
-% get the mean of all traces
-trcs_mean = mean(trc_matrix,2);
-% substract the mean from all traces
-diff = trc_matrix - repmat(trcs_mean,1,traceNum);
-% squre them
-diff = diff.^2 ;
-% compute the mean
-trcs_var = mean(diff,2);
-
-%%
-
 ptxtFile = sprintf('C:\\Users\\afernandezrubio\\Desktop\\abraham\\python\\DPA\\plaintext_list_0503.csv');
 ptxt_matrix = csvread(ptxtFile);
 ptxt_matrix = ptxt_matrix' ; 

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\software_AES.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\software_AES.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Wed May 03 20:40:37 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Thu May 25 15:43:42 2017
 <BR><P>
 <H3>Maximum Stack Usage =        520 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -18,7 +18,11 @@ Functions with no stack information
 <P>
 <H3>
 Mutually Recursive functions
-</H3> <LI><a href="#[14]">SysTick_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[14]">SysTick_Handler</a><BR>
+</H3> <LI><a href="#[10]">NMI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[10]">NMI_Handler</a><BR>
+ <LI><a href="#[11]">HardFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[11]">HardFault_Handler</a><BR>
+ <LI><a href="#[12]">SVC_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[12]">SVC_Handler</a><BR>
+ <LI><a href="#[13]">PendSV_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[13]">PendSV_Handler</a><BR>
+ <LI><a href="#[14]">SysTick_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[14]">SysTick_Handler</a><BR>
  <LI><a href="#[21]">ADC1_COMP_IRQHandler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[21]">ADC1_COMP_IRQHandler</a><BR>
 </UL>
 <P>
@@ -33,21 +37,21 @@ Function Pointers
  <LI><a href="#[1b]">EXTI2_3_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[1c]">EXTI4_15_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[18]">FLASH_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
- <LI><a href="#[11]">HardFault_Handler</a> from main.o(i.HardFault_Handler) referenced from startup_stm32l053xx.o(RESET)
+ <LI><a href="#[11]">HardFault_Handler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[27]">I2C1_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[28]">I2C2_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[2e]">LCD_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[22]">LPTIM1_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
- <LI><a href="#[10]">NMI_Handler</a> from main.o(i.NMI_Handler) referenced from startup_stm32l053xx.o(RESET)
+ <LI><a href="#[10]">NMI_Handler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[16]">PVD_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
- <LI><a href="#[13]">PendSV_Handler</a> from main.o(i.PendSV_Handler) referenced from startup_stm32l053xx.o(RESET)
+ <LI><a href="#[13]">PendSV_Handler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[19]">RCC_CRS_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[2d]">RNG_LPUART1_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[17]">RTC_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[f]">Reset_Handler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[29]">SPI1_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[2a]">SPI2_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
- <LI><a href="#[12]">SVC_Handler</a> from main.o(i.SVC_Handler) referenced from startup_stm32l053xx.o(RESET)
+ <LI><a href="#[12]">SVC_Handler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[14]">SysTick_Handler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
  <LI><a href="#[30]">SystemInit</a> from system_stm32l0xx.o(i.SystemInit) referenced from startup_stm32l053xx.o(.text)
  <LI><a href="#[25]">TIM21_IRQHandler</a> from startup_stm32l053xx.o(.text) referenced from startup_stm32l053xx.o(RESET)
@@ -243,6 +247,34 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[bc]"></a>_maybe_terminate_alloc</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, maybetermalloc1.o(.emb_text), UNUSED)
 
+<P><STRONG><a name="[10]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_stm32l053xx.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32l053xx.o(RESET)
+</UL>
+<P><STRONG><a name="[11]"></a>HardFault_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_stm32l053xx.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardFault_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardFault_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32l053xx.o(RESET)
+</UL>
+<P><STRONG><a name="[12]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_stm32l053xx.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SVC_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SVC_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32l053xx.o(RESET)
+</UL>
+<P><STRONG><a name="[13]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_stm32l053xx.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32l053xx.o(RESET)
+</UL>
 <P><STRONG><a name="[14]"></a>SysTick_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_stm32l053xx.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
@@ -381,7 +413,7 @@ Global Symbols
 
 <P><STRONG><a name="[bd]"></a>__assert</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, assert.o(.text), UNUSED)
 
-<P><STRONG><a name="[94]"></a>memcmp</STRONG> (Thumb, 90 bytes, Stack size 8 bytes, memcmp.o(.text))
+<P><STRONG><a name="[95]"></a>memcmp</STRONG> (Thumb, 90 bytes, Stack size 8 bytes, memcmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = memcmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -868,19 +900,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[11]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, main.o(i.HardFault_Handler))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32l053xx.o(RESET)
-</UL>
-<P><STRONG><a name="[10]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, main.o(i.NMI_Handler))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32l053xx.o(RESET)
-</UL>
-<P><STRONG><a name="[13]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, main.o(i.PendSV_Handler))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32l053xx.o(RESET)
-</UL>
-<P><STRONG><a name="[12]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, main.o(i.SVC_Handler))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32l053xx.o(RESET)
-</UL>
-<P><STRONG><a name="[90]"></a>SystemClock_Config</STRONG> (Thumb, 188 bytes, Stack size 0 bytes, main.o(i.SystemClock_Config))
+<P><STRONG><a name="[90]"></a>SystemClock_Config</STRONG> (Thumb, 190 bytes, Stack size 0 bytes, main.o(i.SystemClock_Config))
 <BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -921,7 +941,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_writebuf
 </UL>
 
-<P><STRONG><a name="[97]"></a>delayCycles</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, main.o(i.delayCycles))
+<P><STRONG><a name="[93]"></a>delayCycles</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, utils.o(i.delayCycles))
 <BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -934,39 +954,39 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_file.o(.text)
 </UL>
-<P><STRONG><a name="[96]"></a>getrn</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, utils.o(i.getrn))
+<P><STRONG><a name="[97]"></a>getrn</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, utils.o(i.getrn))
 <BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[47]"></a>main</STRONG> (Thumb, 278 bytes, Stack size 328 bytes, main.o(i.main))
+<P><STRONG><a name="[47]"></a>main</STRONG> (Thumb, 284 bytes, Stack size 328 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 520 + Unknown Stack Size
 <LI>Call Chain = main &rArr; AES_encrypt &rArr; __aeabi_assert &rArr; __assert_puts &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write
 </UL>
-<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rdser
+<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rdser
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mystdout_init
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getrn
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getrn
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delayCycles
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConfigureRNG
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delayCycles
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;private_AES_set_encrypt_key
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;private_AES_set_encrypt_key
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_encrypt
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[92]"></a>mystdout_init</STRONG> (Thumb, 106 bytes, Stack size 0 bytes, utils.o(i.mystdout_init))
+<P><STRONG><a name="[92]"></a>mystdout_init</STRONG> (Thumb, 108 bytes, Stack size 0 bytes, utils.o(i.mystdout_init))
 <BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[95]"></a>private_AES_set_encrypt_key</STRONG> (Thumb, 734 bytes, Stack size 32 bytes, aes.o(i.private_AES_set_encrypt_key))
+<P><STRONG><a name="[96]"></a>private_AES_set_encrypt_key</STRONG> (Thumb, 734 bytes, Stack size 32 bytes, aes.o(i.private_AES_set_encrypt_key))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = private_AES_set_encrypt_key
 </UL>
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[93]"></a>rdser</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, utils.o(i.rdser))
+<P><STRONG><a name="[94]"></a>rdser</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, utils.o(i.rdser))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = rdser
 </UL>
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stdin_getchar
@@ -975,10 +995,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[98]"></a>stdin_getchar</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, utils.o(i.stdin_getchar))
-<BR><BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rdser
+<BR><BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rdser
 </UL>
 
-<P><STRONG><a name="[8e]"></a>stdout_putchar</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stdout_usart.o(i.stdout_putchar))
+<P><STRONG><a name="[8e]"></a>stdout_putchar</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, utils.o(i.stdout_putchar))
 <BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_write
 </UL>
 <P>

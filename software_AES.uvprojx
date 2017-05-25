@@ -404,11 +404,6 @@
               <FileType>5</FileType>
               <FilePath>.\AES.h</FilePath>
             </File>
-            <File>
-              <FileName>stdout_USART.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\stdout_USART.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>

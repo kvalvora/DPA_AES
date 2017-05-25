@@ -1,7 +1,6 @@
 %% Hamming Weight DPA - May 2017
 % Vernam Lab - WPI
-% Abraham Fernandez-Rubio
-% Kewal Vora
+% Authors: Abraham Fernandez-Rubio and Kewal Vora
 
 % Sbox look up table
 Sbox = {'63' '7c' '77' '7b' 'f2' '6b' '6f' 'c5' '30' '01' '67' ...
@@ -35,25 +34,11 @@ traceNum = 5000;
 traceLen = 7200;
 keyNum = 256;
 
-traceFile = sprintf('C:\\Users\\afernandezrubio\\Desktop\\abraham\\python\\DPA\\power_traces_0503.csv');
+traceFile = sprintf('C:\\Users\\afernandezrubio\\Desktop\\abraham\\DPA_AES\\DPA_script\\power_traces.csv');
 trc_matrix = csvread(traceFile);
 trc_matrix = trc_matrix' ; 
 
-%%
-
-% Compute the mean and variance
-% get the mean of all traces
-trcs_mean = mean(trc_matrix,2);
-% substract the mean from all traces
-diff = trc_matrix - repmat(trcs_mean,1,traceNum);
-% squre them
-diff = diff.^2 ;
-% compute the mean
-trcs_var = mean(diff,2);
-
-%%
-
-ptxtFile = sprintf('C:\\Users\\afernandezrubio\\Desktop\\abraham\\python\\DPA\\plaintext_list_0503.csv');
+ptxtFile = sprintf('C:\\Users\\afernandezrubio\\Desktop\\abraham\\DPA_AES\\DPA_script\\plaintext_list.csv');
 ptxt_matrix = csvread(ptxtFile);
 ptxt_matrix = ptxt_matrix' ; 
 
@@ -94,7 +79,7 @@ for selByte = 1:1
     hold on
     %plot(R(hex2dec('2b')+1,:),'*k'); % plot correct key byte on top
 
-    %outputFileName = sprintf('C:\\Users\\afernandezrubio\\Desktop\\abraham\\python\\DPA\\HW_DPA_ouput_byte_%d',selByte);
+    %outputFileName = sprintf('C:\\python\\DPA\\HW_DPA_ouput_byte_%d',selByte);
     
     % store plot and R matrix
     %saveas(fig,outputFileName,'fig');

@@ -1,11 +1,12 @@
 """
-   DWF Python Example 5
-   Author:  Digilent, Inc.
-   Revision: 10/17/2013
+   Trace Collection
+   Vernam Lab - WPI
+   Authors: Abraham Fernandez-Rubio and Kewal Vora   
+   Based on Digilent, Inc. Analog Discovery 2 python SDK examples.
 
    Requires:                       
        Python 2.7, numpy, matplotlib
-       python-dateutil, pyparsing
+       python-dateutil, pyparsing, pyserial
 """
 from ctypes import *
 from dwfconstants import *
